@@ -1,0 +1,42 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href=" {% static 'bootstrap.min.css' %}" rel="stylesheet"media = 'all'>
+    
+    
+    <title>Shop</title>
+</head>
+<header>
+    <div class="container">
+        <div class="row">
+          <div class="col12">
+      {% if messages %}
+              {% for message in messages %}
+                <div class="alert alert-info" role="alert">
+                  <h1 style="text-align: center;">{{ message }}</h1>
+                </div>
+              {% endfor %}
+  {% endif %}
+    <div class="container">
+        <div class="row">
+            <div class="col12">   
+                                <p style="text-align: center;"> <a  style="margin-left: 10px;margin-right: 10px;" class="text-center text-red"href="#">Home</a>
+                                 <a  style="margin-left: 10px;margin-right: 10px;"   class="text-center text-red"href="{% url 'all_orders_products' pk=pk %}">Список продуктов в заказах</a>
+                                 <a   style="margin-left: 10px;margin-right: 10px;"  class="text-center text-red"href="#">Add_new_products</a>
+                                 <a  style="margin-left: 10px;margin-right: 10px;"  class="text-center text-red"href="{% url 'all_orders' pk=pk %}">Все зазказы клиента</a></p> 
+                                 
+                <h1 class="text-center text-red">Shop</h1>
+                  
+            </div>
+        </div>
+    </div>
+</header>
+{% block content %}
+{% endblock %}
+</footer>
+<body>
+    <script src="{% static 'js\bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>
