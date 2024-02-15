@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col1">
+            <h2>Заказы за неделю</h2>
+            {% for order in orders_week %}
+            <p>Номер заказа : {{order.id}}</p>
+            <p>Товары :{{order.order.products.all}}</p>
+            {% for product in order.products.all %}
+            <p>Название товара: {{product.name}}</p>
+            <P>Описание товара : {{product.description}}</p>
+            <p>Цена товара: {{product.price}}</p>
+            {% endfor %}
+            <p>Дата заказа :{{order.order_date}}</p>
+           
+            <p>Общая стоимость :{{order.total_price}}</p>
+            {% endfor %}
+            <h2>Заказы за месяц</h2>
+            {% for order in orders_month %}
+            <p>Номер заказа :{{order.id}}</p>
+            <p>Товары :{{order.order.products.all}}</p>
+            {% for product in order.products.all %}
+            <p>Название товара: {{product.name}}</p>
+            <P>Описание товара : {{product.description}}</p>
+            <p>Цена товара: {{product.price}}</p>
+            {% endfor %}
+            <p>Дата заказа :{{order.order_date}}</p>
+            <p>Общая стоимость :{{order.total_price}}</p>
+            {% endfor %}
+            <h2>Заказы за год</h2>
+            {% for order in orders_year %}
+            <p>Номер заказа :{{order.id}}</p>
+            <p>Товары :{{order.order.products.all}}</p>
+            {% for product in order.products.all %}
+            <p>Название товара: {{product.name}}</p>
+            <P>Описание товара : {{product.description}}</p>
+            <p>Цена товара: {{product.price}}</p>
+            {% endfor %}
+            <p>Дата заказа :{{order.order_date}}</p>
+            <p>Общая стоимость :{{order.total_price}}</p>
+            {% endfor %}
+          
+        </div>
+    </div>
+</div>
+{% endblock %}
