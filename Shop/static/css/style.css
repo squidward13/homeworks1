@@ -1,0 +1,20 @@
+.root {
+    --color1: rgb(17, 90, 158);
+    --color2: rgb(142, 17, 158);
+
+}
+
+header, footer, section{
+    padding: 100px 0;
+}
+
+header{
+    padding: 200px 0;
+    background-color: aqua;
+}
+
+
+footer 
+{
+    background-color:  rgb(142, 17, 158);
+}

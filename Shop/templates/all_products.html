@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col1">
+            <h1 style="text-align: center;">Продукты</h1>
+            {% for product in products %}
+            <p style="text-align: center;">{{product.name}}</p>
+            <p style="text-align: center;">{{product.price}}</p>
+            {% if product.image %}
+            <p style="text-align: center;"><img src="{{ product.image.url }}" height="200px" width="200px"></p>
+            {% else %}
+            {% endif %}
+            <p style="text-align: center;">{{product.description}}</p>
+            <p style="text-align: center;">{{product.quantity}}</p>
+            {% endfor %}
+           
+        </div>
+    </div>
+</div>
+{% endblock %}
