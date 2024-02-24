@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block content %}
+<<<<<<< HEAD
+<<<<<<< HEAD
+<div class="container">
+    <div class="row">
+        <div class="col1">
+            <h1 style="text-align: center;">Добавить продукт</h1>
+            <br>
+            <form action="{% url 'new_product_form' %}" method="post",enctype="multipart/form-data">
+            
+           
+        </div>
+    </div>
+</div>
+=======
+
+>>>>>>> Hometask_3
+=======
+<div clas="container">
+  <div class="row">
+    <div class="col12">
+      <h1 style="text-align: center;">Добавить продукт</h1>
+      <br>
+      <form enctype="multipart/form-data", method="post", action="{% url 'add_product_form' %}">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label  class="form-label">Название товра</label>
+          <input type="text" class="form-control"name ="name">
+        </div>
+        <div class="mb-3">
+          <label  class="form-label">Цена</label>
+          <input type="text" class="form-control" name="price">
+        </div>
+        <div class="mb-3">
+          <label  class="form-label">Изображение</label>
+          <input type="file" class="form-control" name="image">
+        </div>
+        <div class="mb-3" >
+          <label class= "form-control">Oписание</label>
+          <textarea class="form-control" name="description"></textarea>
+        </div>
+        <div class="mb-3">
+          <label  class="form-label">Количество</label>
+          <input type="text" class="form-control" name="quantity">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+      </form>
+    </div>
+  </div>
+</div>
+>>>>>>> Hometask_4
+{% endblock %}
